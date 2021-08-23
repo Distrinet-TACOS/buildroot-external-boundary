@@ -25,3 +25,10 @@ then
     $HOST_DIR/bin/mkimage -A arm -O linux -T script -C none -a 0 -e 0 \
     -n "upgrade script" -d $BOARD_DIR/6x_upgrade.txt $TARGET_DIR/6x_upgrade
 fi
+
+echo "Building uTee for OPTEE"
+
+# optee uTee
+$HOST_DIR/bin/mkimage -A arm -O linux -C none -a 0x4dffffe4 -e 0x4e000000 -d $BINARIES_DIR/tee.bin $TARGET_DIR/boot/uTee
+
+

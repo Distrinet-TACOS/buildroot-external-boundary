@@ -1,3 +1,10 @@
+Run the following command in the presence of the buildroot to create a configuration for OPTEE
+make BR2_EXTERNAL=$PWD/buildroot-external-boundary/ -C buildroot O=$PWD/output nitrogen6x_optee_defconfig
+
+
+
+Original README:
+
 buildroot-external-boundary
 ===========================
 

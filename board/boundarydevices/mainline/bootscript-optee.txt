@@ -80,6 +80,8 @@ if load ${devtype} ${devnum}:${distro_bootpart} ${a_zImage} ${prefix}zImage ; th
 	echo "bootscript-optee: zImage loaded"
 	if load ${devtype} ${devnum}:${distro_bootpart} ${a_uTee} ${prefix}uTee ; then
 		echo "bootscript-optee: uTee loaded"
+		echo "Configuring TZASC to allow non-secure access"
+		mw 21d0108 f0000000
 		echo "bootm command"
 		bootm ${a_uTee} - ${a_fdt}
 	fi
